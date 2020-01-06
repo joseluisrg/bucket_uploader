@@ -11,7 +11,4 @@ Basado en código de conexión a IBM Cloud COS - cloud.ibm.com
 
 Para poder ejecutar el servicio en localmente o en un runtime de node (kubernetes, cloudfoundry, etc.):
 
-´´´
-npm build
-npm start
-´´´
+```npm build npm start```
