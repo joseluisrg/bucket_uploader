@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: bucket-uploader-service
+spec:
+  selector:
+    app: bucket-uploader-app
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30999
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster

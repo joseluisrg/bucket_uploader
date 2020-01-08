@@ -1,0 +1,30 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: bucket-uploader-pod
+  labels:
+    app: bucket-uploader-app
+spec:
+  containers:
+  - name: bucket-uploader-cont
+    image: "<IMAGE_NAME>"
+    ports: 
+    - containerPort: 3000
+      protocol: TCP
+    env:
+    - name: COS_API_KEY   
+      value: "<COS_API_KEY_VALUE>"
+    - name: COS_ENDPOINTS
+      value: "<COS_ENDPOINTS>"
+    - name: COS_IAM_APIKEY_DESC
+      value: "<COS_IAM_APIKEY_DESC_VALUE>"
+    - name: COS_IAM_APIKEY_NAME
+      value: "<COS_IAM_APIKEY_NAME_VALUE>"
+    - name: COS_IAM_ROLE_CRN
+      value: "<COS_IAM_ROLE_CRN_VALUE>"
+    - name: COS_IAM_SERVICE_ID_CRN 
+      value: "<COS_IAM_SERVICE_ID_CRN_VALUE>"
+    - name: COS_IAM_RESOURCE_INSTANCE_ID
+      value: "<COS_IAM_RESOURCE_INSTANCE_ID_VALUE>"
+
+  restartPolicy: Always
